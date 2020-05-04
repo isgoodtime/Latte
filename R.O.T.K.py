@@ -10,7 +10,7 @@ banlist = ["!경고"]
 async def on_ready():
     print(client.user.id)
     print("Latte Bot Start")
-    game = discord.Game('나때는 말이야! 어!')
+    game = discord.Game('!명령어목록으로 다양한 명령어를 확인하세요.')
     await client.change_presence(status=discord.Status.online, activity=game)
 
 @client.event
@@ -38,6 +38,7 @@ async def on_message(message):
         await message.channel.send('현재 핑 {0} ms'.format(client.latency))
     if message.content.startswith("!문의"):
         await message.channel.send("문의는 whitejicon kwon 님이나 Beren ercha 님에게 문의해주세요.")
+        await message.channel.send("콥 디렉터 나 리크루터에게 문의해주세요. 단, 운영진이 잠수일 경우 잠시만 기다려주세요.")
     if message.content.startswith("!나때는말이야"):
         await message.channel.send("워워.. 진정하세요!")
     if message.content.startswith("!안녕"):
@@ -80,7 +81,70 @@ async def on_message(message):
         embed.add_field(name='Ship Name: Kestrel', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발 50%\n[장갑 저항력] EM: 50% 열: 45% 키네틱: 25% 폭발: 10%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
         embed.add_field(name='Module Mounting Restriction', value='4 High / 4 Medium / 2 Low 4 Launcher', inline=False )
         embed.add_field(name='Bonus', value='로켓 대미지 5% 보너스 라이트 미사일, 로켓 비행속도 10% 보너스', inline=False)
-        embed.add_field(name='Description', value='Kestrel급은 동급 함선들 중에서도 제일 정교하고 수준 높은 센서 어레이를 탑재한 미사일 운용 함급이다. 이러한 설계에도 불구하고 여지껏 칼다리 해군 말고도 다른 부유한 무역 회사들(corporations)에게 화물 수송선의 용도로도 쓰여왔다는 사실은 꽤 흥미로운 점이라고 할 수 있겠다. 이렇듯 괜찮은 타격 능력을 갖춘 함급이라는 점은 안전이 보장되지 않은 위험한 구역들에서 단독으로도 무역 작업을 수행할 수 있게끔 해 준다. 본 함급은 미사일 런처를 총 4문까지 탑재 가능하게 설계되었으며, 이로 인해 다른 포탑 형식의 무장이나 채광 광선의 탑재는 제한되었다', inline=False)
+        embed.add_field(name='Description', value='Kestrel급은 동급 함선들 중에서도 제일 정교하고 수준 높은 센서 어레이를 탑재한 미사일 운용 함급이다. 이러한 설계에도 불구하고 여지껏 칼다리 해군 말고도 다른 부유한 무역 회사들(corporations)에게 화물 수송선의 용도로도 쓰여왔다는 사실은 꽤 흥미로운 점이라고 할 수 있겠다. 이렇듯 괜찮은 타격 능력을 갖춘 함급이라는 점은 안전이 보장되지 않은 위험한 구역들에서 단독으로도 무역 작업을 수행할 수 있게끔 해 준다. 본 함급은 미사일 런처를 총 4문까지 탑재 가능하게 설계되었으며, 이로 인해 다른 포탑 형식의 무장이나 채광 광선의 탑재는 제한되었다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Kestrel"):
+        embed = discord.Embed(color=0x0000ff)
+        embed.add_field(name='Ship Name: Kestrel', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발 50%\n[장갑 저항력] EM: 50% 열: 45% 키네틱: 25% 폭발: 10%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='4 High / 4 Medium / 2 Low 4 Launcher', inline=False)
+        embed.add_field(name='Bonus', value='로켓 대미지 5% 보너스 라이트 미사일, 로켓 비행속도 10% 보너스', inline=False)
+        embed.add_field(name='Description', value='Kestrel급은 동급 함선들 중에서도 제일 정교하고 수준 높은 센서 어레이를 탑재한 미사일 운용 함급이다. 이러한 설계에도 불구하고 여지껏 칼다리 해군 말고도 다른 부유한 무역 회사들(corporations)에게 화물 수송선의 용도로도 쓰여왔다는 사실은 꽤 흥미로운 점이라고 할 수 있겠다. 이렇듯 괜찮은 타격 능력을 갖춘 함급이라는 점은 안전이 보장되지 않은 위험한 구역들에서 단독으로도 무역 작업을 수행할 수 있게끔 해 준다. 본 함급은 미사일 런처를 총 4문까지 탑재 가능하게 설계되었으며, 이로 인해 다른 포탑 형식의 무장이나 채광 광선의 탑재는 제한되었다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!콘도르"):
+        embed = discord.Embed(color=0x0000ff)
+        embed.add_field(name='Ship Name: Condor', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 50% 열: 45% 키네틱: 25% 폭발: 10%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='4 High / 4 Medium / 2 Low 3 Launcher', inline=False)
+        embed.add_field(name='Bonus', value='10% 키네틱 라이트 미사일과 로켓 피해량 증가\n80% 추진기 재밍 시스템 활성화 비용 감소', inline=False)
+        embed.add_field(name='Description', value='콘도르는 뛰어난 기동력을 보유한 함선입니다. 제한된 적재 공간으로 인해 무역 및 채굴에는 적합하지 않지만, 어썰트 함선의 특성을 지니고 있으며 유격전에서 탁월한 성능을 자랑합니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Condor"):
+        embed = discord.Embed(color=0x0000ff)
+        embed.add_field(name='Ship Name: Condor', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 50% 열: 45% 키네틱: 25% 폭발: 10%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='4 High / 4 Medium / 2 Low 3 Launcher', inline=False)
+        embed.add_field(name='Bonus', value='10% 키네틱 라이트 미사일과 로켓 피해량 증가\n80% 추진기 재밍 시스템 활성화 비용 감소', inline=False)
+        embed.add_field(name='Description', value='콘도르는 뛰어난 기동력을 보유한 함선입니다. 제한된 적재 공간으로 인해 무역 및 채굴에는 적합하지 않지만, 어썰트 함선의 특성을 지니고 있으며 유격전에서 탁월한 성능을 자랑합니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!임페이러"):
+        embed = discord.Embed(color=0x000000)
+        embed.add_field(name='Ship Name: Impairor', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 54% 열: 41% 키네틱: 31% 폭발: 29%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='2 High / 2 Medium / 2 Low 2 Turret 1 Launcher / Drone 5, 5 ', inline=False)
+        embed.add_field(name='Bonus', value='Small Energy Turret 캡 소모량 20% 감소\nSmall Energy Turret 대미지 10% 보너스\nWeapon Disruptor 강도 15% 보너스\n모든 아머 저항 보너스 8%', inline=False)
+        embed.add_field(name='Description', value='임페이러급 코르벳은 아마르 제국에서 수십 년 간 양산해온 함선입니다. 아마르 영토에서 가장 흔하게 볼 수 있는 기종이며 무역 또는 노예 수송에 주로 사용됩니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Impairor"):
+        embed = discord.Embed(color=0x000000)
+        embed.add_field(name='Ship Name: Impairor', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 54% 열: 41% 키네틱: 31% 폭발: 29%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='2 High / 2 Medium / 2 Low 2 Turret 1 Launcher / Drone 5, 5 ', inline=False)
+        embed.add_field(name='Bonus', value='Small Energy Turret 캡 소모량 20% 감소\nSmall Energy Turret 대미지 10% 보너스\nWeapon Disruptor 강도 15% 보너스\n모든 아머 저항 보너스 8%', inline=False)
+        embed.add_field(name='Description', value='임페이러급 코르벳은 아마르 제국에서 수십 년 간 양산해온 함선입니다. 아마르 영토에서 가장 흔하게 볼 수 있는 기종이며 무역 또는 노예 수송에 주로 사용됩니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!퍼니셔"):
+        embed = discord.Embed(color=0x000000)
+        embed.add_field(name='Ship name: Punisher', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 54% 열: 43% 키네틱: 34% 폭발: 30%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='4 High / 2 Medium / 5 Low 4 Turret', inline=False)
+        embed.add_field(name='Bonus', value='Small Energy Turret 캡 소모량 10% 감소\n모든 아머 저항 4% 보너스')
+        embed.add_field(name='Description', value='현존하는 최강의 아마르 프리깃 중 하나입니다. 대규모 군사 작전 수행 시 퍼니셔는 강력한 무장을 바탕으로 대형 함선과의 연계 전술을 펼칩니다. 적 대열을 단독으로 뚫고 지나갈 수 있을 만큼 뛰어난 화력을 보유하고 있습니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!Punisher"):
+        embed = discord.Embed(color=0x000000)
+        embed.add_field(name='Ship name: Punisher', value='[실드 저항력] EM: 0% 열: 20% 키네틱: 40% 폭발: 50%\n[장갑 저항력] EM: 54% 열: 43% 키네틱: 34% 폭발: 30%\n[선체 저항력] EM: 33% 열: 33% 키네틱: 33% 폭발: 33%', inline=False)
+        embed.add_field(name='Module Mounting Restriction', value='4 High / 2 Medium / 5 Low 4 Turret', inline=False)
+        embed.add_field(name='Bonus', value='Small Energy Turret 캡 소모량 10% 감소\n모든 아머 저항 4% 보너스')
+        embed.add_field(name='Description', value='현존하는 최강의 아마르 프리깃 중 하나입니다. 대규모 군사 작전 수행 시 퍼니셔는 강력한 무장을 바탕으로 대형 함선과의 연계 전술을 펼칩니다. 적 대열을 단독으로 뚫고 지나갈 수 있을 만큼 뛰어난 화력을 보유하고 있습니다.', inline=False)
+        await message.channel.send(embed=embed)
+
+    if message.content.startswith("!랫 정보"):
+        embed = discord.Embed(color=0x00ff00)
+        embed.add_field(name="Drone Rat", value='스트레인, 크리플러, 디비터, 시즈, 알버스 모선, 알버스 여왕, 감염된 캐리어', inline=False)
+        embed.add_field(name="저항력", value='[스트레인] EM: 72% 열: 79% 키네틱: 85% 폭발: 90%\n[크리플러] EM: 30% 열: 40% 키네틱: 50% 폭발: 60%\n[디비터] EM: 30% 열: 40% 키네틱: 50% 폭발: 60%\n[시즈] EM: 30% 열: 40% 키네틱: 50% 폭발: 60%\n[스트라이크] EM: 30% 열: 40% 키네틱: 50% 폭발: 60%\n[알버스 모선] EM: 48% 열: 58% 키네틱: 68% 폭발: 78%\n[알버스 여왕] EM: 49% 열: 59% 키네틱: 69% 폭발: 79%\n[감염된 캐리어] EM: ??? 열: ??? 키네틱: ??? 폭발: ???', inline=False)
+        embed.add_field(name="특이점", value='스트레인 접두사가 들어간 프리깃, 크루저 급은 매우 실드가 단단하다, 하지만 장갑이 뚫리면 바로 녹는다.\n 크리플러, 디비터, 시즈, 스트라이크, 접두사가 들어간 프리깃은 매우 몸집이 약하다. 하지만 워프 디스럽터, 웹같은 전자전을 쓴다. 그러므로 약하게 봐선 안되는 녀석들이다.\n알버스 모선, 알버스 여왕은 매우 좋은 탱과 강한 딜을 가지고 있다. 하지만 트래킹 속도가 안 좋아 길라같은 크루저가 500M 이상 속도를 내면 못맞춘다.\n다음으로 감염된 캐리어는 보이면 바로 도망가야 한다. 이녀석은 웹을 걸고 엄청난 공격력을 자랑한다. 길라도 3~4방 맞으면 터지니 보이면 바로 도망가야할 1순위 적이다.', inline=False)
         await message.channel.send(embed=embed)
 
     if message.content.startswith("!명령어목록"):
@@ -99,10 +163,12 @@ async def on_message(message):
         embed.add_field(name='!뭐먹지', value='Latte is horse 봇이 뭐해먹을지 정해줍니다', inline=False)
         embed.add_field(name='!정보', value='자신의 디스코드 정보를 표시해줍니다.', inline=False)
         embed.add_field(name='!출처', value='함선 사진 출처는 펀즈위키 입니다.', inline=False)
+        embed.add_field(name='!(함선이름)', value='함선이름에 원하시는 함선을 적으시면 능력치, 등을 알려드립니다.', inline=False)
+        embed.add_field(name='!랫 정보', value='랫 정보를 표시합니다.', inline=False)
         await message.channel.send(embed=embed)
 
     if message.content.startswith("!뭐하지"):
-        game = "이머징 어비셜 데드_스페이스 탐사 산업 채광 퍽치기 뒤치기 렛질"
+        game = "이머징 어비셜 데드_스페이스 탐사 산업 채광 퍽치기 뒤치기 랫질 앞치기 PVP"
         gamechoice = game.split(" ")
         gamenumber = random.randint(1, len(gamechoice))
         gameresult = gamechoice[gamenumber-1]
@@ -116,11 +182,25 @@ async def on_message(message):
         await message.channel.send(Foodresult + " 어떠세요?")
 
     if message.content.startswith("!야"):
-        hey = "?? 네? 그만불러요ㅡㅡ ;; 그만해요 봇도_인내심이_있습니다. 부르셨나요?"
+        hey = "?? 네? 그만불러요ㅡㅡ ;; 그만해요 봇도_인내심이_있습니다. 부르셨나요? 저도_사생활이_있습니다.. 제발그만.. 저리가아아!!!!! 그만좀하라고요! 아몰라.. 제발가!!!!!!!!!!!!!!!!!!!!!! 아니**하지**말라니까요! 아..좀.. 예? 뭐요 ........"
         heychoice = hey.split(" ")
         heynumber = random.randint(1, len(heychoice))
         heyresult = heychoice[heynumber-1]
         await message.channel.send(heyresult)
+
+    if message.content.startswith("!퍽치기"):
+        puck = "무엇? ???????? 뭔데요? 에반데;; 퍽치기당하실? 빼애애애애애액 사탄도_울고갈_휴먼;; 미쵸미쵸.. 빠만데.."
+        puckchoice = puck.split(" ")
+        pucknumber = random.randint(1, len(puckchoice))
+        puckresult = puckchoice[pucknumber-1]
+        await message.channel.send(puckresult)
+
+    if message.content.startswith("!이번주로또번호"):
+        roto = "그런거몰라요 ?????? 75 23 19 33 85 4 52 43 98 32 1 2 3 4 5 6 7 8 9 10 14 18 29 35 74 39 28 99 92 98 82 85 "
+        rotochoice = roto.split(" ")
+        rotonumber = random.randint(1, len(rotochoice))
+        rotoresult = rotochoice[rotonumber-1]
+        await message.channel.send(rotoresult)
 
     if message.content.startswith("!시간"):
         a = datetime.datetime.today().year
@@ -130,6 +210,20 @@ async def on_message(message):
         e = datetime.datetime.today().minute
         f = datetime.datetime.today().second
         await message.channel.send(str(a) + "년 " + str(b) + "월 " + str(c) + "일 " + str(d) + "시 " + str(e) + "분 " + str(f) + "초 입니다.")
+
+    if message.content.startswith("!주사위"):
+        roll = message.content.split(" ")
+        rolld = roll[1].split("J")
+        dice = 0
+        for i in range(0, int(rolld[0])+1):
+            dice = dice + random.randint(1, int(rolld[1]))
+        await message.channel.send(str(dice))
+
+    if message.content.startswith("!골라"):
+        choice = message.content.split(" ")
+        choicenumber = random.randint(1, len(choice)-1)
+        choiceresult = choice[choicenumber]
+        await message.channel.send(choiceresult)
 
     if message.content.startswith("!펀즈위키"):
         await message.channel.send("https://www.funzinnu.com/EVEwiki/FrontPage")
@@ -194,4 +288,8 @@ async def on_message(message):
         pic = message.content.split(" ")[15]
         await message.channel.send(file=discord.File(pic))
 
-client.run("NjYxMTkyMjMxNTIwMDQzMDM3.Xq6STA.V_z1QvwJDN8z1PCJbpLRItIf5H8")
+    if message.content.startswith("/사진"):
+        pic = message.content.split(" ")[16]
+        await message.channel.send(file=discord.File(pic))
+
+client.run("NjYxMTkyMjMxNTIwMDQzMDM3.Xq_EQg.IPxiPZndOID2Oqq7WfKc1rBd4d0")
